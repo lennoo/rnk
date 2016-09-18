@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="手机:"
-                android:id="@+id/textView"
+                android:id="@+id/phonemodel"
                 android:layout_weight="1" />
 
             <TextView
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="系统:"
-                android:id="@+id/textView2"
+                android:id="@+id/systemver"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -82,10 +82,12 @@
                 android:layout_weight="1"
                 android:text="手机类型：" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -98,6 +100,31 @@
                 android:id="@+id/dataactivity"
                 android:layout_weight="1"
                 android:text="数据活动：" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/gsmlac"
+                android:layout_weight="1"
+                android:text="LAC："/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/gsmcid"
+                android:layout_weight="1"
+                android:text="CID："/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/gsmsign"
+                android:layout_weight="1"
+                android:text="Sign："/>
         </LinearLayout>
 
     </LinearLayout>

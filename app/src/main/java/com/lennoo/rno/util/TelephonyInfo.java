@@ -71,6 +71,8 @@ public final class TelephonyInfo {
                 return "CDMA";
             case TelephonyManager.NETWORK_TYPE_EDGE:
                 return "EDGE";
+            case TelephonyManager.NETWORK_TYPE_LTE:
+                return "LTE";
             default:
                 return "NONE";
         }
