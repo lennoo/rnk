@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">RNO</string>
+    <string name="app_name">RNK</string>
+    <string name="phone">手机:</string>
+    <string name="system">系统：</string>
+    <string name="imsi">IMSI：</string>
+    <string name="tac">TAC:</string>
+    <string name="pci">PCI:</string>
+    <string name="ci">CI:</string>
+    <string name="enb">eNB:</string>
+    <string name="cellid">CellID:</string>
+    <string name="rsrp">RSRP:</string>
+    <string name="rsrq">RSRQ:</string>
+    <string name="sinr">SINR:</string>
 </resources>

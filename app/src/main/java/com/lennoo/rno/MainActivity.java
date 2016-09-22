@@ -9,6 +9,7 @@ import android.telephony.CellInfo;
 import android.telephony.CellInfoGsm;
 import android.telephony.CellInfoLte;
 import android.telephony.CellSignalStrengthGsm;
+import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.view.ViewDebug;
 import android.widget.TextView;
@@ -32,12 +33,11 @@ public class MainActivity extends AppCompatActivity {
         TextView textPhoneType = (TextView)findViewById(R.id.phonetype);
         TextView textDataState = (TextView)findViewById(R.id.datastate);
         TextView textDataActivity = (TextView)findViewById(R.id.dataactivity);
-        TextView textGsmSign = (TextView)findViewById(R.id.gsmsign);
         TextView textTac = (TextView)findViewById(R.id.tac);
         TextView textPci = (TextView)findViewById(R.id.pci);
         TextView textRsrp = (TextView)findViewById(R.id.rsrp);
 
-        textPhoneModel.setText("手机:"+Build.MODEL);
+        textPhoneModel.setText(Build.MODEL);
         textSystemVer.setText("系统:"+Build.VERSION.RELEASE);
         textImei.setText("IMEI:"+telephonyInfo.getDeviceId());
         textImsi.setText("IMSI:"+telephonyInfo.getSubscriberId());
@@ -45,7 +45,10 @@ public class MainActivity extends AppCompatActivity {
         textPhoneType.setText("手机类型:"+telephonyInfo.getPhoneType());
         textDataState.setText("数据状态:"+telephonyInfo.getDataState());
         textDataActivity.setText("数据活动:"+telephonyInfo.getDataActivity());
-
+        SignalPhoneStateListener ps = new SignalPhoneStateListener(this);
+        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        tm.listen(ps, PhoneStateListener.LISTEN_SIGNAL_STRENGTHS);
+/*
         TelephonyManager tm = (TelephonyManager)this.getSystemService(Context.TELEPHONY_SERVICE);
         CellInfo cellinfo = tm.getAllCellInfo().get(0);
         int sign = 0;
@@ -60,8 +63,9 @@ public class MainActivity extends AppCompatActivity {
             tac = cellInfoLte.getCellIdentity().getTac();
 
         }
-        textGsmSign.setText("Sign"+ Integer.toString(sign));
+        textRsrp.setText("Sign"+ Integer.toString(sign));
         textPci.setText("TA:"+Integer.toString(ta));
         textTac.setText("TAC:"+ Integer.toString(tac));
+        */
     }
 }
